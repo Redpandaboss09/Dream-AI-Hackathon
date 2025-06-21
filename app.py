@@ -1,4 +1,6 @@
 from flask import render_template, Flask
+from . import db
+
 
 app = Flask(__name__)
 
@@ -11,3 +13,5 @@ def index():
 @app.route('/map')
 def map_view():
     return render_template('map.html')
+
+db.init_app(app)
